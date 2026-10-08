@@ -1,5 +1,7 @@
 # Academic Homepage Templates
 
+**Live demo:** https://chi-shan0707.github.io/academic-homepage-templates/ · all designs: [/gallery/](https://chi-shan0707.github.io/academic-homepage-templates/gallery/)
+
 A small Jekyll kit for a personal academic homepage, with **19 interchangeable designs**.
 All designs share the same content files, so you write your information once and switch the look with one line.
 
@@ -21,7 +23,7 @@ All designs share the same content files, so you write your information once and
    | About-page text (Markdown) | `_includes/about.md` |
    | CV page (Markdown) and optional PDF | `_includes/cv.md`, `files/cv.pdf` |
    | Portrait (rectangular, 3:4 recommended) | `assets/img/portrait.jpg` |
-   | Site title, URL, description | `_config.yml` |
+   | Site title, URL, description — **set `url` and `baseurl`** (this repo ships with the demo's values) | `_config.yml` |
 3. **Pick a design**: preview them (below), then set `design: <id>` in `_config.yml`.
 4. **Write posts** in `_posts/` (the three included posts are samples; delete them).
 5. **Publish**: push to GitHub → *Settings → Pages → Build and deployment → Deploy from a branch → `main` / root*.

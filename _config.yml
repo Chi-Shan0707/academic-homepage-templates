@@ -4,8 +4,11 @@
 title: Avery Lin
 description: >-
   Personal academic homepage of Avery Lin — research, publications, and writing.
-url: https://your-handle.github.io   # your site's address
-baseurl: ""                          # "" for a user site (your-handle.github.io); "/repo-name" for a project site
+# These two lines are set for the live demo of this repository.
+# For your own site use:  url: https://<your-handle>.github.io   and   baseurl: ""
+# (keep baseurl "/<repo-name>" only if the site is served from a project repo).
+url: https://chi-shan0707.github.io
+baseurl: "/academic-homepage-templates"
 lang: en
 
 # Which design the site uses. One of the ids in _data/styles.yml:
