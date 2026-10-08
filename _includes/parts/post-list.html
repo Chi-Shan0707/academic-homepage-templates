@@ -1,0 +1,10 @@
+{%- comment -%} params: limit {%- endcomment -%}
+{%- assign plimit = include.limit | default: 1000 -%}
+<ul class="post-list">
+  {%- for p in site.posts limit: plimit %}
+  <li class="post-item">
+    <a class="post-link" href="{{ base }}/writing/{{ p.slug }}/">{{ p.title }}</a>
+    <time class="post-date" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+  </li>
+  {%- endfor %}
+</ul>

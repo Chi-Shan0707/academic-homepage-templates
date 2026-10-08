@@ -1,0 +1,48 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings — see README.md for the full guide.
+# ─────────────────────────────────────────────────────────────
+title: Avery Lin
+description: >-
+  Personal academic homepage of Avery Lin — research, publications, and writing.
+url: https://your-handle.github.io   # your site's address
+baseurl: ""                          # "" for a user site (your-handle.github.io); "/repo-name" for a project site
+lang: en
+
+# Which design the site uses. One of the ids in _data/styles.yml:
+#   article tufte classic faculty oxford claret ivy monograph distill
+#   paper sage mist linen forest ledger washi clay dusk stone
+design: classic
+
+# Preview mode: shows every design at /<id>/, a gallery at /gallery/, and a
+# small ‹ › switcher on each page. Set to false once you have chosen a design,
+# then run `python3 scripts/make_previews.py --clean`.
+previews: true
+
+# Subtitle of the Writing page
+writing_lede: Notes, essays, and technical write-ups.
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  math_engine: mathjax
+
+permalink: /writing/:slug/
+timezone: UTC
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      kind: post
+
+exclude:
+  - README.md
+  - LICENSE
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

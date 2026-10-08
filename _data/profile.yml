@@ -1,0 +1,86 @@
+# ─────────────────────────────────────────────────────────────
+#  Your information. Everything here is SAMPLE data — replace it.
+#  Fields marked (optional) can be left empty ("") or deleted.
+# ─────────────────────────────────────────────────────────────
+name: Avery Lin                 # full name, shown in headers and titles
+given_name: Avery               # used by designs that split the name (dusk)
+family_name: Lin
+monogram: A                     # one letter/character for the favicon and small badges (clay, washi)
+native_name: ""                 # (optional) name in another script, e.g. 林雅文
+role: PhD student               # e.g. "Undergraduate student", "Assistant Professor"
+affiliation: Department of Example Studies, Example University
+affiliation_short: Example University
+affiliation_url: https://example.edu
+location: City, Country
+
+photo: /assets/img/portrait.jpg # rectangular portrait (3:4 works best); shown only on the About page
+photo_alt: Portrait of Avery Lin
+photo_caption: Somewhere on a hike   # (optional) used as a caption by article, tufte and monograph
+
+cv_pdf: /files/cv.pdf           # (optional) link target for the CV download button
+
+interests: >-
+  Sequential decision-making, optimization, and the mathematics of learning
+  systems; applications to real-world planning problems.
+
+links:                          # shown under your name; url may be mailto:, https:, or a site path
+  - name: Email
+    url: mailto:you@example.edu
+  - name: CV
+    url: /files/cv.pdf
+  - name: GitHub
+    url: https://github.com/your-handle
+  - name: Scholar
+    url: https://scholar.google.com/
+
+publications:                   # newest first; your own name (exactly as `name`) is bolded automatically
+  - title: "A Sample Paper Title on Sequential Decision-Making"
+    authors: Avery Lin, Second Author, Third Author
+    venue: Conference on Example Studies (CES)
+    year: 2026
+    note: Oral                  # (optional) e.g. Poster, Spotlight, Workshop
+    summary: >-
+      (optional) One or two sentences on what the paper shows. Delete this
+      field if you prefer a compact list.
+    links:
+      - { name: Paper, url: "https://example.org/paper.pdf" }
+      - { name: Code, url: "https://github.com/your-handle/project" }
+  - title: Another Example Paper with a Shorter Title
+    authors: First Author, Avery Lin
+    venue: Workshop on Example Methods
+    year: 2025
+    links:
+      - { name: Paper, url: "https://example.org/paper2.pdf" }
+
+experience:                     # education and positions, newest first
+  - when: 2024 – present
+    title: PhD in Example Studies
+    org: Example University
+    url: https://example.edu
+    detail: (optional) Advisor, focus area, or one-line description.
+  - when: Summer 2025
+    title: Research Intern
+    org: Example Research Lab
+    detail: Worked on a sample project.
+
+projects:                       # link entries can point to a post with `post: <slug>`
+  - title: example-project
+    url: https://github.com/your-handle/example-project
+    meta: Open-source library · 2026
+    summary: >-
+      A one-sentence description of what the project does and why it matters.
+    links:
+      - { name: Code, url: "https://github.com/your-handle/example-project" }
+      - { name: Write-up, post: formatting-sample }
+
+talks:
+  - title: "An Example Talk Title"
+    venue: Example Seminar Series
+    date: Mar 2026
+    url: ""                     # (optional) slides link
+
+service:
+  - Reviewer, Conference on Example Studies 2026
+
+honors:
+  - Example Fellowship, 2025

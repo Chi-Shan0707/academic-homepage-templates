@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.kind == "about" %}{{ profile.name }}{% if profile.native_name != "" and profile.native_name %} · {{ profile.native_name }}{% endif %}{% else %}{{ ptitle }} · {{ profile.name }}{% endif %}</title>
+{%- if post and post.description %}
+<meta name="description" content="{{ post.description | strip_html | escape }}">
+{%- else %}
+<meta name="description" content="{{ site.description | strip | escape }}">
+{%- endif %}
+<meta name="author" content="{{ profile.name }}">
+<meta property="og:title" content="{% if post %}{{ post.title | escape }}{% else %}{{ profile.name }}{% endif %}">
+<meta property="og:site_name" content="{{ profile.name }}">
+{%- assign accent = st.swatches[2] | replace: "#", "%23" %}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='{{ accent }}'/><text x='16' y='21.5' font-family='Georgia,serif' font-size='16' text-anchor='middle' fill='white'>{{ profile.monogram | default: profile.name | slice: 0 }}</text></svg>">
+<meta name="theme-color" content="{{ st.swatches[0] }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{%- if st.fonts %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ st.fonts }}&display=swap" media="print" onload="this.media='all'">
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/' | append: s | append: '.css' | relative_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ profile.name }}" href="{{ '/feed.xml' | relative_url }}">
+{%- if post and post.math %}
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] },
+  chtml: { scale: 0.98 }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{%- endif %}
+{%- if post and body contains "language-mermaid" %}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  document.querySelectorAll("pre code.language-mermaid").forEach((c) => { const d = document.createElement("div"); d.className = "mermaid"; d.textContent = c.textContent; c.closest("div.highlighter-rouge, pre").replaceWith(d); });
+  mermaid.initialize({ startOnLoad: false, theme: "neutral" });
+  await mermaid.run({ querySelector: ".mermaid" });
+</script>
+{%- endif %}

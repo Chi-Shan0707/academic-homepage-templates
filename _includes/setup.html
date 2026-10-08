@@ -1,0 +1,42 @@
+{%- comment -%}
+  Shared variables for every styled page:
+    s      design id          st    design record from _data/styles.yml
+    base   URL prefix: "/<id>" for design previews, "" for the root site
+    post   the post being shown (kind == post), body = its rendered HTML
+{%- endcomment -%}
+{%- assign profile = site.data.profile -%}
+{%- assign s = page.style | default: site.design -%}
+{%- assign st = site.data.styles | where: "id", s | first -%}
+{%- if page.style -%}
+  {%- assign base = site.baseurl | append: "/" | append: s -%}
+{%- else -%}
+  {%- assign base = site.baseurl -%}
+{%- endif -%}
+{%- assign post = nil -%}
+{%- if page.kind == "post" -%}
+  {%- if page.post_slug -%}
+    {%- assign post = site.posts | where: "slug", page.post_slug | first -%}
+    {%- assign body = post.content -%}
+  {%- else -%}
+    {%- assign post = page -%}
+    {%- assign body = content -%}
+  {%- endif -%}
+  {%- assign ptitle = post.title -%}
+  {%- assign words = body | strip_html | number_of_words -%}
+  {%- assign minutes = words | divided_by: 220 | plus: 1 -%}
+{%- elsif page.kind == "about" -%}
+  {%- assign ptitle = "About" -%}
+{%- elsif page.kind == "writing" -%}
+  {%- assign ptitle = "Writing" -%}
+{%- elsif page.kind == "cv" -%}
+  {%- assign ptitle = "CV" -%}
+{%- else -%}
+  {%- assign ptitle = page.title -%}
+{%- endif -%}
+{%- capture subpath -%}
+  {%- case page.kind -%}
+    {%- when "writing" -%}writing/
+    {%- when "cv" -%}cv/
+    {%- when "post" -%}writing/{{ post.slug }}/
+  {%- endcase -%}
+{%- endcapture -%}
